@@ -267,3 +267,227 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+/* --- /app-mobile — PWA install landing --- */
+.app-mobile {
+  min-height: 100dvh;
+  background: var(--ink-900);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-mobile--desktop {
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app-mobile__glow {
+  position: absolute;
+  inset: -20% -30% auto;
+  height: 55%;
+  background: radial-gradient(ellipse 80% 70% at 50% 0%, rgba(245, 158, 11, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.app-mobile__content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: calc(20px + env(safe-area-inset-top, 0px)) 22px calc(28px + env(safe-area-inset-bottom, 0px));
+  max-width: 440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-mobile__card {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--r-xl);
+  padding: 32px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-mobile__card h1 {
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.app-mobile__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.app-mobile__hero {
+  text-align: center;
+  margin: 12px 0 24px;
+}
+
+.app-mobile__app-icon {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 20px;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(251, 191, 36, 0.2), rgba(217, 119, 6, 0.12));
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--sh-amber);
+}
+
+.app-mobile__hero h1 {
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.app-mobile__lead {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.app-mobile__icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 8px auto;
+  border-radius: 18px;
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--amber-400);
+  display: grid;
+  place-items: center;
+}
+
+.app-mobile__url-box {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  word-break: break-all;
+}
+
+.app-mobile__url-box code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.app-mobile__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.app-mobile__features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.app-mobile__feat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.14);
+  color: var(--amber-400);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.app-mobile__actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.app-mobile__installed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: rgba(22, 163, 74, 0.12);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  color: #86efac;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.app-mobile__hint {
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.app-mobile__ios-steps {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 16px;
+}
+
+.app-mobile__ios-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.app-mobile__ios-steps ol {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.app-mobile__ios-steps li {
+  padding-left: 4px;
+}
+
+.app-mobile__ios-steps .icon {
+  vertical-align: -3px;
+  margin: 0 2px;
+}
+
+.app-mobile__footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.app-mobile__footer a,
+.app-mobile__back {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.app-mobile__footer a:hover,
+.app-mobile__back:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
