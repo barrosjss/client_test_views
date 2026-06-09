@@ -1,0 +1,82 @@
+/* Responsive helpers — ported from CMOCS.html design handoff */
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 920px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: inline-flex !important;
+  }
+  .cmocs-sidebar {
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 248px !important;
+  }
+  .cmocs-sidebar.open {
+    transform: translateX(0);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .grid-6 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .grid-5 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .grid-2-1 {
+    grid-template-columns: 1fr !important;
+  }
+  .track-grid {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+  }
+  .docs-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .docs-index {
+    display: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .auth-brand {
+    display: none !important;
+  }
+  .auth-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .auth-form-col {
+    padding: 24px 22px calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+    align-items: start !important;
+  }
+  .auth-mobile-top {
+    display: block !important;
+    margin-bottom: 28px;
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-6 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-5 {
+    grid-template-columns: 1fr !important;
+  }
+}

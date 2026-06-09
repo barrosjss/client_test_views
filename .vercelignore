@@ -1,0 +1,8 @@
+.design-bundle/
+.design-bundle-pwa/
+.design-bundle-tracking/
+dev-dist/
+docs/
+scripts/
+*.md
+!README.md

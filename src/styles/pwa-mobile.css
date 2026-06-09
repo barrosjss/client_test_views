@@ -1,0 +1,269 @@
+/* MOBILE APP / PWA CHROME — from Claude Design handoff */
+:root {
+  --m-nav-h: 60px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+}
+
+.m-appbar {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 12px;
+  padding-top: var(--safe-t);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  flex: none;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.m-appbar h1 {
+  font-size: 17px;
+}
+
+.m-bottomnav {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 75;
+  grid-template-columns: repeat(5, 1fr);
+  background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--line);
+  padding-bottom: var(--safe-b);
+}
+
+.m-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 0 7px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--slate-400);
+  font-size: 10.5px;
+  font-weight: 600;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.14s;
+}
+
+.m-tab.on {
+  color: var(--amber-600);
+}
+
+.m-tab .m-tab-ic {
+  position: relative;
+  display: grid;
+  place-items: center;
+  transition: transform 0.14s;
+}
+
+.m-tab.on .m-tab-ic {
+  transform: translateY(-1px);
+}
+
+.m-tab-badge {
+  position: absolute;
+  top: -5px;
+  right: -9px;
+  min-width: 16px;
+  height: 16px;
+  background: var(--danger);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 9.5px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+  border: 1.5px solid #fff;
+}
+
+.m-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 20, 28, 0.45);
+  z-index: 120;
+  animation: fadeIn2 0.2s;
+}
+
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.m-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 121;
+  background: var(--surface);
+  border-radius: 22px 22px 0 0;
+  max-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--safe-b);
+  box-shadow: 0 -12px 44px rgba(13, 20, 28, 0.22);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .m-sheet {
+    animation: sheetUp 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@keyframes sheetUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.m-sheet-grip {
+  width: 38px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--slate-200);
+  margin: 10px auto 2px;
+  flex: none;
+}
+
+.m-sheet-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 13px 18px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink-800);
+  cursor: pointer;
+  text-align: left;
+}
+
+.m-sheet-row:active {
+  background: var(--bg);
+}
+
+.m-sheet-row.on {
+  background: var(--amber-tint);
+  color: var(--amber-700);
+}
+
+@media (max-width: 920px) {
+  .m-appbar {
+    display: flex;
+  }
+  .m-bottomnav {
+    display: grid;
+  }
+  .cmocs-main {
+    padding: 16px 14px calc(var(--m-nav-h) + var(--safe-b) + 16px) !important;
+  }
+  .btn-icon {
+    min-width: 38px;
+  }
+}
+
+@media (max-width: 720px) {
+  .card {
+    overflow-x: auto;
+  }
+  .tbl {
+    min-width: 560px;
+  }
+  .m-noscroll {
+    overflow-x: visible !important;
+  }
+}
+
+/* TRACKING — map visible on mobile */
+@media (max-width: 920px) {
+  .track-grid {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+  }
+  .track-map {
+    order: -1;
+    min-height: min(56vh, 480px) !important;
+  }
+  .track-list {
+    max-height: 300px;
+  }
+  .track-map .card.fade-in {
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+    bottom: 12px !important;
+  }
+}
+
+/* LANDING — mobile */
+@media (max-width: 860px) {
+  .lp-nav-links {
+    display: none !important;
+  }
+  .lp-cta-desktop {
+    display: none !important;
+  }
+  .lp-burger {
+    display: flex !important;
+  }
+  .lp-mobile-panel {
+    display: block !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .lp-scroll h1 {
+    font-size: 36px !important;
+    line-height: 1.08 !important;
+  }
+  .lp-scroll h2 {
+    font-size: 28px !important;
+  }
+  .lp-scroll [style*='grid-template-columns: repeat(4'] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .lp-scroll [style*='grid-template-columns: repeat(3'] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .lp-scroll [style*='grid-template-columns: 1.4fr'] {
+    grid-template-columns: 1fr !important;
+  }
+  .lp-scroll [style*='grid-template-columns: 1fr 1fr'] {
+    grid-template-columns: 1fr !important;
+  }
+  .lp-scroll [style*='200px 1fr'] {
+    grid-template-columns: 1fr !important;
+  }
+  .lp-preview-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .lp-scroll [style*='grid-template-columns: repeat(4'] {
+    grid-template-columns: 1fr !important;
+  }
+  .lp-scroll [style*='grid-template-columns: repeat(2'] {
+    grid-template-columns: 1fr !important;
+  }
+}
